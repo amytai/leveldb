@@ -744,6 +744,7 @@ class Benchmark {
     for (int i = 0; i < num_; i++) {
         uint64_t offset = 4096 * rnd.Uniform(1024);
         r->Read(offset, 4096, &result, scratch);
+        thread->stats.FinishedSingleOp();
     }    
   }
 
